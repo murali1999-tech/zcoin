@@ -212,13 +212,19 @@ bool CZMQWalletSegmentEvent::NotifyWalletSegment(const std::string &segment)
     return true;
 }
 
-bool CZMQZnodeListEvent::NotifyZnodeList()
+bool CZMQMasternodeListEvent::NotifyMasternodeList()
 {
     request.push_back(Pair("type", "initial"));
     Execute();
     return true;
 }
 
+bool CZMQZnodeListEvent::NotifyZnodeList()
+{
+    request.push_back(Pair("type", "initial"));
+    Execute();
+    return true;
+}
 
 bool CZMQConnectionsEvent::NotifyConnections()
 {
